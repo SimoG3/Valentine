@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        <title>Hey Hafsa !</title>
+
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Would You Like to be My Valentine ?</h1>
+                <h1 class = "header_text">Don't you click on no or i'm burning down Haj Fateh.</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+                <img src="file:///home/simog/Desktop/valentine/images/Screenshot_20250206_175420_Snapchat2.webp">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function moveButton() {
+                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                        document.getElementById('noButton').style.left = `${x}px`;
+                        document.getElementById('noButton').style.top = `${y}px`;
+                    }
+
+                    let clickCount = 0;
+
+                     // Get the buttons
+                     const yesButton = document.getElementById('yesButton');
+                     const noButton = document.getElementById('noButton');
+
+                     // Function to make the "Yes" button bigger
+                      noButton.addEventListener('click', () => {
+                       clickCount++; // Increase the click count with each click on "No"
+                       yesButton.style.fontSize = `${16 + clickCount * 2}px`; // Increase font size for "Yes" button
+                       yesButton.style.padding = `${10 + clickCount * 2}px ${20 + clickCount * 4}px`; // Increase padding
+                     });
+                </script> 
+            </div>
+        </div>
+       
+    </body> 
+</html>
